@@ -3,6 +3,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Button } from "@/components/ui/button";
 import { ArrowRight, BookOpen, Code, Lock, Shield } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useTranslation } from "react-i18next";
 
 interface NavigationCardProps {
   title: string;
@@ -13,6 +14,8 @@ interface NavigationCardProps {
 }
 
 const NavigationCard = ({ title, description, icon, to, className }: NavigationCardProps) => {
+  const { t } = useTranslation();
+  
   return (
     <Card className={cn("overflow-hidden transition-all hover:shadow-md", className)}>
       <CardHeader className="flex flex-row items-center gap-4 pb-2">
@@ -27,7 +30,7 @@ const NavigationCard = ({ title, description, icon, to, className }: NavigationC
       <CardFooter className="pt-2">
         <Button asChild variant="ghost" className="ml-auto gap-1 p-0 text-primary">
           <Link to={to}>
-            Explore <ArrowRight className="h-4 w-4" />
+            {t('navigation.explore')} <ArrowRight className="h-4 w-4" />
           </Link>
         </Button>
       </CardFooter>

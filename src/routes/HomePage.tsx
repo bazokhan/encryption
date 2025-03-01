@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { encryptionRoutes, EncryptionIcon } from "@/configs/encryption";
 import { CardsNavigation } from "@/components/CardsNavigation";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTranslation } from "react-i18next";
 
@@ -36,6 +36,12 @@ export function HomePage() {
               <Button asChild>
                 <Link to="/classical">
                   {t('app.getStarted')} <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+              <Button variant="outline" asChild>
+                <Link to="/demo" className="flex items-center">
+                  <Play className="mr-2 h-4 w-4" />
+                  {t('navigation.demo')}
                 </Link>
               </Button>
             </div>

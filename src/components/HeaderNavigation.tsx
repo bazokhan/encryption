@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { BookOpen, Code, Lock, Shield } from "lucide-react";
+import { BookOpen, Code, Lock, Play, Shield } from "lucide-react";
 import { cn } from "@/lib/utils";
 import {
   NavigationMenu,
@@ -73,6 +73,15 @@ export const HeaderNavigation = ({
           <NavigationMenuItem>
             <Link to="/" className={navigationMenuTriggerStyle()}>
               {t("navigation.home")}
+            </Link>
+          </NavigationMenuItem>
+
+          <NavigationMenuItem>
+            <Link to="/demo" className={navigationMenuTriggerStyle()}>
+              <span className="flex items-center gap-1">
+                <Play className="h-4 w-4 text-primary" />
+                {t("navigation.demo")}
+              </span>
             </Link>
           </NavigationMenuItem>
 

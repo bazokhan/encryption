@@ -16,7 +16,7 @@ export const MainLayout = () => {
       icon: category as "classical" | "symmetric" | "asymmetric",
       children: children.map((child) => ({
         label: child.label,
-        description: `${label} encryption using ${child.label} algorithm`,
+        description: t(`algorithms.${child.label.toLowerCase()}.description`),
         href: `/${category}/${child.label.toLowerCase()}`,
       })),
     })

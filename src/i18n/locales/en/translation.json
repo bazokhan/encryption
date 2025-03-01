@@ -10,7 +10,9 @@
     }
   },
   "navigation": {
-    "home": "Home"
+    "home": "Home",
+    "demo": "Interactive Demo",
+    "explore": "Explore"
   },
   "categories": {
     "title": "Encryption Categories",
@@ -85,5 +87,61 @@
     "english": "English",
     "arabic": "Arabic"
   },
-  "direction": "ltr"
+  "direction": "ltr",
+  "encryption": {
+    "title": "Interactive Encryption Demonstration",
+    "description": "Explore encryption algorithms step-by-step with this interactive demonstration. Select an algorithm, provide inputs, and watch as each step of the encryption process is visualized.",
+    "selectAlgorithm": "Select Encryption Algorithm",
+    "selectAlgorithmPlaceholder": "Choose an algorithm",
+    "startEncryption": "Start Encryption",
+    "nextStep": "Next Step",
+    "previousStep": "Previous Step",
+    "reset": "Reset",
+    "inputs": "Inputs",
+    "outputs": "Outputs",
+    "inputText": "Input Text",
+    "outputText": "Output Text",
+    "originalValues": "Original Values",
+    "shiftedValues": "Shifted Values",
+    "shiftBy": "Shift By",
+    "notAvailable": "Not available",
+    "calculating": "Calculating...",
+    "noInputData": "No input data available",
+    "selectAlgorithmAndStart": "Select an algorithm and start the encryption process",
+    "placeholders": {
+      "plaintext": "Enter text to encrypt",
+      "shift": "Enter shift value (e.g., 3)",
+      "keyword": "Enter keyword (e.g., KEY)",
+      "key": "Enter encryption key",
+      "publicKey": "Enter public key",
+      "privateKey": "Enter private key"
+    },
+    "inputs": {
+      "plaintext": "Plaintext",
+      "shift": "Shift Value",
+      "keyword": "Keyword",
+      "key": "Encryption Key",
+      "publicKey": "Public Key",
+      "privateKey": "Private Key"
+    },
+    "animations": {
+      "highlightCharacters": {
+        "description": "Each character is processed individually during encryption."
+      },
+      "shiftNumbers": {
+        "description": "Values are shifted by a specific amount according to the algorithm."
+      },
+      "xorOperation": {
+        "description": "XOR operation combines two values bit by bit, a fundamental operation in many encryption algorithms."
+      },
+      "rsa": {
+        "description": "RSA encryption uses modular exponentiation with public key (e, n) to secure data."
+      },
+      "placeholder": {
+        "description": "This animation demonstrates the current step of the encryption process.",
+        "animating": "Animation in progress...",
+        "static": "Animation paused. Click 'Next Step' to continue."
+      }
+    }
+  }
 } 

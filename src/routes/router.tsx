@@ -3,7 +3,9 @@ import { MainLayout } from "@/layouts/MainLayout";
 import { CategoryLayout } from "@/layouts/CategoryLayout";
 import { encryptionRoutes } from "@/configs/encryption";
 import { HomePage } from "@/routes/HomePage";
+import { EncryptionDemoPage } from "@/routes/EncryptionDemoPage";
 
+// Export the router
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -12,6 +14,10 @@ export const router = createBrowserRouter([
       {
         path: "/",
         element: <HomePage />,
+      },
+      {
+        path: "/demo",
+        element: <EncryptionDemoPage />,
       },
       ...Object.entries(encryptionRoutes).map(([categoryName, category]) => ({
         path: `/${categoryName}`,
