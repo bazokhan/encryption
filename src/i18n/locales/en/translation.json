@@ -1,0 +1,89 @@
+{
+  "app": {
+    "title": "Encryption Algorithms Explorer",
+    "subtitle": "Learn about different encryption techniques from classical to modern approaches. Understand how they work and see them in action.",
+    "getStarted": "Get Started",
+    "footer": {
+      "builtWith": "Built with React, Shadcn UI, and Tailwind CSS",
+      "copyright": "© 2025 Encryption Algorithms",
+      "madeWith": "Made with ❤️ by"
+    }
+  },
+  "navigation": {
+    "home": "Home"
+  },
+  "categories": {
+    "title": "Encryption Categories",
+    "subtitle": "Explore different types of encryption algorithms categorized by their approach and security level.",
+    "classical": {
+      "title": "Classical",
+      "description": "Classical encryption methods are the foundation of cryptography, dating back thousands of years. These techniques, while not secure by modern standards, introduced fundamental concepts that evolved into today's sophisticated algorithms. They typically use substitution or transposition ciphers that can be performed with pen and paper."
+    },
+    "symmetric": {
+      "title": "Symmetric",
+      "description": "Symmetric encryption uses the same key for both encryption and decryption. These algorithms are typically fast and efficient for large amounts of data, but require secure key exchange between parties. Modern symmetric algorithms like AES form the backbone of everyday secure communications and data storage."
+    },
+    "asymmetric": {
+      "title": "Asymmetric",
+      "description": "Asymmetric encryption, also known as public-key cryptography, uses a pair of mathematically related keys: a public key for encryption and a private key for decryption. This revolutionary approach solved the key distribution problem of symmetric encryption and enables secure communications without prior key exchange. It's the foundation of modern internet security."
+    }
+  },
+  "algorithms": {
+    "caesar": {
+      "title": "Caesar Cipher",
+      "description": "The Caesar cipher is one of the simplest and most widely known encryption techniques. Named after Julius Caesar, who used it to communicate with his generals, it works by shifting each letter in the plaintext by a fixed number of positions down the alphabet. Despite its simplicity, it introduces the concept of substitution ciphers that became the basis for more complex encryption methods."
+    },
+    "vigenere": {
+      "title": "Vigenère Cipher",
+      "description": "The Vigenère cipher is a method of encrypting alphabetic text by using a simple form of polyalphabetic substitution. It employs a keyword to determine different shift values for each letter in the plaintext, making it significantly more secure than the Caesar cipher. For centuries, it was considered unbreakable until methods of cryptanalysis were developed in the 19th century."
+    },
+    "aes": {
+      "title": "Advanced Encryption Standard (AES)",
+      "description": "The Advanced Encryption Standard (AES) is one of the most widely used symmetric encryption algorithms in the world. Established by the U.S. National Institute of Standards and Technology (NIST) in 2001, AES operates on blocks of data using key sizes of 128, 192, or 256 bits. It's considered highly secure and is used in numerous applications from secure communications to file encryption."
+    },
+    "rsa": {
+      "title": "RSA (Rivest–Shamir–Adleman)",
+      "description": "RSA (Rivest–Shamir–Adleman) is one of the first practical public-key cryptosystems, widely used for secure data transmission. The security of RSA is based on the practical difficulty of factoring the product of two large prime numbers. With sufficiently long keys, RSA provides a high level of security and is commonly used for secure communications, digital signatures, and key exchange protocols across the internet."
+    }
+  },
+  "features": {
+    "title": "Features",
+    "subtitle": "This application provides interactive demonstrations of encryption algorithms.",
+    "secure": {
+      "title": "Secure",
+      "description": "Learn about secure encryption methods used in modern applications."
+    },
+    "interactive": {
+      "title": "Interactive",
+      "description": "Try out encryption algorithms with your own inputs and see the results."
+    },
+    "educational": {
+      "title": "Educational",
+      "description": "Understand the principles behind different encryption techniques."
+    }
+  },
+  "algorithmTemplate": {
+    "overview": "Overview",
+    "demo": "Interactive Demo",
+    "code": "Code Example",
+    "howItWorks": {
+      "title": "How It Works",
+      "subtitle": "Understanding the principles behind the algorithm",
+      "description": "This section will contain a detailed explanation of how the algorithm works, including its history, mathematical foundations, and practical applications."
+    },
+    "keyFeatures": "Key Features",
+    "strengths": "Strengths",
+    "weaknesses": "Weaknesses",
+    "demoDescription": "Try out the algorithm with your own inputs",
+    "demoPlaceholder": "Interactive demo will be implemented here",
+    "codeExample": {
+      "title": "Code Example",
+      "subtitle": "Implementation example in JavaScript"
+    }
+  },
+  "language": {
+    "english": "English",
+    "arabic": "Arabic"
+  },
+  "direction": "ltr"
+} 

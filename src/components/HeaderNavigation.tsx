@@ -11,6 +11,7 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const icons = {
   classical: <BookOpen className="h-4 w-4" />,
@@ -59,43 +60,55 @@ const ListItem = React.forwardRef<
 });
 ListItem.displayName = "ListItem";
 
-export const HeaderNavigation = ({ items, className }: HeaderNavigationProps) => {
+export const HeaderNavigation = ({
+  items,
+  className,
+}: HeaderNavigationProps) => {
+  const { t } = useTranslation();
+
   return (
-    <NavigationMenu className={cn("mx-auto", className)}>
-      <NavigationMenuList>
-        <NavigationMenuItem>
-          <Link to="/" className={navigationMenuTriggerStyle()}>
-            Home
-          </Link>
-        </NavigationMenuItem>
-        
-        {items.map((item) => (
-          <NavigationMenuItem key={item.category}>
-            <NavigationMenuTrigger className="flex items-center gap-1">
-              <span className="text-primary">{icons[item.icon]}</span>
-              {item.label}
-            </NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                {item.children.map((child) => (
-                  <li key={child.href}>
-                    <NavigationMenuLink asChild>
-                      <Link to={child.href} className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                        <div className="text-sm font-medium leading-none">{child.label}</div>
-                        {child.description && (
-                          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                            {child.description}
-                          </p>
-                        )}
-                      </Link>
-                    </NavigationMenuLink>
-                  </li>
-                ))}
-              </ul>
-            </NavigationMenuContent>
+    <div className="flex items-center justify-between w-full">
+      <NavigationMenu className={cn("mx-auto", className)}>
+        <NavigationMenuList>
+          <NavigationMenuItem>
+            <Link to="/" className={navigationMenuTriggerStyle()}>
+              {t("navigation.home")}
+            </Link>
           </NavigationMenuItem>
-        ))}
-      </NavigationMenuList>
-    </NavigationMenu>
+
+          {items.map((item) => (
+            <NavigationMenuItem key={item.category}>
+              <NavigationMenuTrigger className="flex items-center gap-1">
+                <span className="text-primary">{icons[item.icon]}</span>
+                {t(`categories.${item.category}.title`)}
+              </NavigationMenuTrigger>
+              <NavigationMenuContent>
+                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                  {item.children.map((child) => (
+                    <li key={child.href}>
+                      <NavigationMenuLink asChild>
+                        <Link
+                          to={child.href}
+                          className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                        >
+                          <div className="text-sm font-medium leading-none">
+                            {child.label}
+                          </div>
+                          {child.description && (
+                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                              {child.description}
+                            </p>
+                          )}
+                        </Link>
+                      </NavigationMenuLink>
+                    </li>
+                  ))}
+                </ul>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+          ))}
+        </NavigationMenuList>
+      </NavigationMenu>
+    </div>
   );
-}; 
+};

@@ -1,5 +1,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { useTranslation } from "react-i18next";
 
 interface AlgorithmTemplateProps {
   title: string;
@@ -8,6 +9,8 @@ interface AlgorithmTemplateProps {
 }
 
 export function AlgorithmTemplate({ title, description, children }: AlgorithmTemplateProps) {
+  const { t } = useTranslation();
+  
   return (
     <div className="space-y-6">
       <div className="space-y-2">
@@ -17,26 +20,25 @@ export function AlgorithmTemplate({ title, description, children }: AlgorithmTem
 
       <Tabs defaultValue="overview" className="space-y-4">
         <TabsList>
-          <TabsTrigger value="overview">Overview</TabsTrigger>
-          <TabsTrigger value="demo">Interactive Demo</TabsTrigger>
-          <TabsTrigger value="code">Code Example</TabsTrigger>
+          <TabsTrigger value="overview">{t('algorithmTemplate.overview')}</TabsTrigger>
+          <TabsTrigger value="demo">{t('algorithmTemplate.demo')}</TabsTrigger>
+          <TabsTrigger value="code">{t('algorithmTemplate.code')}</TabsTrigger>
         </TabsList>
         
         <TabsContent value="overview" className="space-y-4">
           <Card>
             <CardHeader>
-              <CardTitle>How It Works</CardTitle>
+              <CardTitle>{t('algorithmTemplate.howItWorks.title')}</CardTitle>
               <CardDescription>
-                Understanding the principles behind the algorithm
+                {t('algorithmTemplate.howItWorks.subtitle')}
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               <p>
-                This section will contain a detailed explanation of how the algorithm works,
-                including its history, mathematical foundations, and practical applications.
+                {t('algorithmTemplate.howItWorks.description')}
               </p>
               <div className="rounded-md bg-muted p-4">
-                <h3 className="mb-2 text-lg font-medium">Key Features</h3>
+                <h3 className="mb-2 text-lg font-medium">{t('algorithmTemplate.keyFeatures')}</h3>
                 <ul className="list-disc pl-5 space-y-1">
                   <li>Feature one of the algorithm</li>
                   <li>Feature two of the algorithm</li>
@@ -49,7 +51,7 @@ export function AlgorithmTemplate({ title, description, children }: AlgorithmTem
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <Card>
               <CardHeader>
-                <CardTitle>Strengths</CardTitle>
+                <CardTitle>{t('algorithmTemplate.strengths')}</CardTitle>
               </CardHeader>
               <CardContent>
                 <ul className="list-disc pl-5 space-y-1">
@@ -62,7 +64,7 @@ export function AlgorithmTemplate({ title, description, children }: AlgorithmTem
             
             <Card>
               <CardHeader>
-                <CardTitle>Weaknesses</CardTitle>
+                <CardTitle>{t('algorithmTemplate.weaknesses')}</CardTitle>
               </CardHeader>
               <CardContent>
                 <ul className="list-disc pl-5 space-y-1">
@@ -78,15 +80,15 @@ export function AlgorithmTemplate({ title, description, children }: AlgorithmTem
         <TabsContent value="demo" className="space-y-4">
           <Card>
             <CardHeader>
-              <CardTitle>Interactive Demo</CardTitle>
+              <CardTitle>{t('algorithmTemplate.demo')}</CardTitle>
               <CardDescription>
-                Try out the algorithm with your own inputs
+                {t('algorithmTemplate.demoDescription')}
               </CardDescription>
             </CardHeader>
             <CardContent>
               {children || (
                 <div className="flex items-center justify-center h-64 bg-muted rounded-md">
-                  <p className="text-muted-foreground">Interactive demo will be implemented here</p>
+                  <p className="text-muted-foreground">{t('algorithmTemplate.demoPlaceholder')}</p>
                 </div>
               )}
             </CardContent>
@@ -96,9 +98,9 @@ export function AlgorithmTemplate({ title, description, children }: AlgorithmTem
         <TabsContent value="code" className="space-y-4">
           <Card>
             <CardHeader>
-              <CardTitle>Code Example</CardTitle>
+              <CardTitle>{t('algorithmTemplate.codeExample.title')}</CardTitle>
               <CardDescription>
-                Implementation example in JavaScript
+                {t('algorithmTemplate.codeExample.subtitle')}
               </CardDescription>
             </CardHeader>
             <CardContent>

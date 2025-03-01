@@ -3,13 +3,16 @@ import { encryptionRoutes, EncryptionIcon } from "@/configs/encryption";
 import { CardsNavigation } from "@/components/CardsNavigation";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useTranslation } from "react-i18next";
 
 export function HomePage() {
+  const { t } = useTranslation();
+  
   // Transform the encryption routes to the format expected by CardsNavigation
   const navigationItems = Object.entries(encryptionRoutes).map(
-    ([category, { label, description }]) => ({
-      title: label,
-      description: description || `Explore ${label} encryption algorithms`,
+    ([category]) => ({
+      title: t(`categories.${category}.title`),
+      description: t(`categories.${category}.description`),
       icon: category as EncryptionIcon,
       to: `/${category}`,
     })
@@ -23,17 +26,16 @@ export function HomePage() {
           <div className="flex flex-col items-center space-y-4 text-center">
             <div className="space-y-2">
               <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl">
-                Encryption Algorithms Explorer
+                {t('app.title')}
               </h1>
               <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
-                Learn about different encryption techniques from classical to modern approaches.
-                Understand how they work and see them in action.
+                {t('app.subtitle')}
               </p>
             </div>
             <div className="space-x-4">
               <Button asChild>
                 <Link to="/classical">
-                  Get Started <ArrowRight className="ml-2 h-4 w-4" />
+                  {t('app.getStarted')} <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
             </div>
@@ -47,10 +49,10 @@ export function HomePage() {
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
               <h2 className="text-3xl font-bold tracking-tight">
-                Encryption Categories
+                {t('categories.title')}
               </h2>
               <p className="mx-auto max-w-[700px] text-muted-foreground">
-                Explore different types of encryption algorithms categorized by their approach and security level.
+                {t('categories.subtitle')}
               </p>
             </div>
           </div>
@@ -66,10 +68,10 @@ export function HomePage() {
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
               <h2 className="text-3xl font-bold tracking-tight">
-                Features
+                {t('features.title')}
               </h2>
               <p className="mx-auto max-w-[700px] text-muted-foreground">
-                This application provides interactive demonstrations of encryption algorithms.
+                {t('features.subtitle')}
               </p>
             </div>
           </div>
@@ -91,9 +93,9 @@ export function HomePage() {
                   <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold">Secure</h3>
+              <h3 className="text-xl font-bold">{t('features.secure.title')}</h3>
               <p className="text-center text-muted-foreground">
-                Learn about secure encryption methods used in modern applications.
+                {t('features.secure.description')}
               </p>
             </div>
             <div className="flex flex-col items-center space-y-2 rounded-lg border p-6 shadow-sm">
@@ -115,9 +117,9 @@ export function HomePage() {
                   <path d="m7 21 5-5 5 5" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold">Interactive</h3>
+              <h3 className="text-xl font-bold">{t('features.interactive.title')}</h3>
               <p className="text-center text-muted-foreground">
-                Try out encryption algorithms with your own inputs and see the results.
+                {t('features.interactive.description')}
               </p>
             </div>
             <div className="flex flex-col items-center space-y-2 rounded-lg border p-6 shadow-sm">
@@ -139,9 +141,9 @@ export function HomePage() {
                   <path d="M12 8h.01" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold">Educational</h3>
+              <h3 className="text-xl font-bold">{t('features.educational.title')}</h3>
               <p className="text-center text-muted-foreground">
-                Understand the principles behind different encryption techniques.
+                {t('features.educational.description')}
               </p>
             </div>
           </div>
