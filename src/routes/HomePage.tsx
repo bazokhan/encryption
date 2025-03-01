@@ -19,20 +19,20 @@ export function HomePage() {
   );
 
   return (
-    <div className="space-y-12">
+    <div className="space-y-8 sm:space-y-12">
       {/* Hero Section */}
-      <section className="py-12 md:py-16 lg:py-20">
-        <div className="container px-4 md:px-6">
+      <section className="py-8 sm:py-12 md:py-16 lg:py-20">
+        <div className="container px-3 sm:px-4 md:px-6">
           <div className="flex flex-col items-center space-y-4 text-center">
             <div className="space-y-2">
-              <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl">
+              <h1 className="text-2xl font-bold tracking-tighter sm:text-3xl md:text-4xl lg:text-5xl">
                 {t('app.title')}
               </h1>
-              <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
+              <p className="mx-auto max-w-[700px] text-sm sm:text-base text-muted-foreground md:text-xl">
                 {t('app.subtitle')}
               </p>
             </div>
-            <div className="space-x-4">
+            <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
               <Button asChild>
                 <Link to="/classical">
                   {t('app.getStarted')} <ArrowRight className="ml-2 h-4 w-4" />
@@ -50,38 +50,38 @@ export function HomePage() {
       </section>
 
       {/* Categories Section */}
-      <section className="py-8 md:py-12">
-        <div className="container px-4 md:px-6">
-          <div className="flex flex-col items-center justify-center space-y-4 text-center">
+      <section className="py-6 sm:py-8 md:py-12">
+        <div className="container px-3 sm:px-4 md:px-6">
+          <div className="flex flex-col items-center justify-center space-y-3 sm:space-y-4 text-center">
             <div className="space-y-2">
-              <h2 className="text-3xl font-bold tracking-tight">
+              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">
                 {t('categories.title')}
               </h2>
-              <p className="mx-auto max-w-[700px] text-muted-foreground">
+              <p className="mx-auto max-w-[700px] text-sm sm:text-base text-muted-foreground">
                 {t('categories.subtitle')}
               </p>
             </div>
           </div>
-          <div className="mt-8">
+          <div className="mt-6 sm:mt-8">
             <CardsNavigation items={navigationItems} />
           </div>
         </div>
       </section>
 
       {/* Features Section */}
-      <section className="py-8 md:py-12 bg-muted/50">
-        <div className="container px-4 md:px-6">
-          <div className="flex flex-col items-center justify-center space-y-4 text-center">
+      <section className="py-6 sm:py-8 md:py-12 bg-muted/50">
+        <div className="container px-3 sm:px-4 md:px-6">
+          <div className="flex flex-col items-center justify-center space-y-3 sm:space-y-4 text-center">
             <div className="space-y-2">
-              <h2 className="text-3xl font-bold tracking-tight">
+              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">
                 {t('features.title')}
               </h2>
-              <p className="mx-auto max-w-[700px] text-muted-foreground">
+              <p className="mx-auto max-w-[700px] text-sm sm:text-base text-muted-foreground">
                 {t('features.subtitle')}
               </p>
             </div>
           </div>
-          <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-3 lg:gap-8 mt-8">
+          <div className="mx-auto grid max-w-5xl grid-cols-1 gap-4 sm:gap-6 md:grid-cols-3 lg:gap-8 mt-6 sm:mt-8">
             <div className="flex flex-col items-center space-y-2 rounded-lg border p-6 shadow-sm">
               <div className="rounded-full bg-primary/10 p-2 text-primary">
                 <svg
