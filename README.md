@@ -1,54 +1,100 @@
-# React + TypeScript + Vite
+# Encryption Algorithms Explorer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An interactive educational web app for learning about encryption and cryptography. Visualize step-by-step how different encryption algorithms work—from classical ciphers to modern standards—with animated demos and detailed explanations.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Classical Encryption**: Caesar and Vigenère ciphers with historical context and ASCII visualization
+- **Symmetric Encryption**: AES-128 with key expansion, SubBytes, ShiftRows, and MixColumns steps
+- **Asymmetric Encryption**: RSA with key generation (n, φ(n), d) and encryption/decryption flow
+- **Interactive Step-by-Step Demo**: Run through each algorithm with your own input and watch intermediate values update
+- **Animated Visualizations**: Character highlighting, number shifting, XOR, and placeholder animations for each step
+- **Internationalization**: Full i18n support (Arabic and English) with RTL layout
+- **Responsive UI**: Radix UI components with Tailwind CSS and dark/light theme support
 
-## Expanding the ESLint configuration
+## Prerequisites
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Node.js** (v18 or higher) — [Install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- **npm** (comes with Node.js)
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Getting Started
+
+### 1. Clone the Repository
+
+```bash
+git clone <YOUR_GIT_URL>
+cd encryption
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 2. Install Dependencies
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+npm install
 ```
+
+### 3. Start the Development Server
+
+```bash
+npm run dev
+```
+
+The application will be available at `http://localhost:5173` (or the next available port).
+
+### 4. Build for Production
+
+```bash
+npm run build
+```
+
+Preview the production build locally:
+
+```bash
+npm run preview
+```
+
+## Technology Stack
+
+- **Frontend Framework**: Vite + React 19 + TypeScript
+- **Routing**: React Router v7
+- **UI Components**: Radix UI + Tailwind CSS + shadcn-style components
+- **Animations**: Framer Motion
+- **Internationalization**: i18next with browser language detection
+
+## Available Scripts
+
+| Script      | Description                    |
+|------------|--------------------------------|
+| `npm run dev`     | Start development server       |
+| `npm run build`   | Build for production          |
+| `npm run preview` | Preview production build      |
+| `npm run lint`    | Run ESLint                    |
+
+## Project Structure
+
+```
+encryption/
+├── src/
+│   ├── components/       # React components
+│   │   ├── encryption/   # Algorithm step, selector, animations
+│   │   └── ui/           # Reusable UI (button, card, input, etc.)
+│   ├── configs/          # Encryption routes and algorithm definitions
+│   ├── i18n/             # Locales (ar, en)
+│   ├── layouts/          # MainLayout, CategoryLayout
+│   ├── routes/           # HomePage, EncryptionDemoPage, router
+│   └── types/            # TypeScript definitions
+├── public/
+└── package.json
+```
+
+## Supported Algorithms
+
+| Category   | Algorithm  | Description                                                                 |
+|-----------|------------|-----------------------------------------------------------------------------|
+| Classical | Caesar     | Shift cipher; each letter shifted by a fixed number of positions           |
+| Classical | Vigenère   | Polyalphabetic substitution using a keyword                               |
+| Symmetric | AES-128    | Block cipher with SubBytes, ShiftRows, MixColumns, AddRoundKey             |
+| Asymmetric| RSA        | Public-key cryptosystem based on factoring large primes                    |
+
+## License
+
+Private Repository, Proprietary Software.
